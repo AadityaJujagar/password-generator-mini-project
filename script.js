@@ -18,14 +18,20 @@ let password = "";
 let passwordLength = 10;
 let checkboxCount = 0;
 handleSlider();
+setIndicator("#ccc");
 
 function handleSlider() {
   slider.value = passwordLength;
   lenPw.innerText = passwordLength;
+  const min = slider.min;
+  const max = slider.max;
+  slider.style.backgroundSize =
+    ((passwordLength - min) * 100) / (max - min) + "%100%";
 }
 
 function setIndicator(color) {
   strengthPw.style.backgroundColor = color;
+  strengthPw.style.boxShadow = `0px 0px 12px 1px ${color}`;
 }
 
 function createRandomInteger(min, max) {
@@ -157,5 +163,5 @@ createPw.addEventListener("click", () => {
 
   password = shufflePw(Array.from(password));
   showPw.value = password;
-  strengthPw();
+  getStrength();
 });
