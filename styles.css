@@ -200,8 +200,7 @@ h1 {
   border: none;
 }
 
-.slider::-webkit-slider-thumb,
-.slider::-moz-range-thumb:hover {
+.slider::-webkit-slider-thumb {
   appearance: none;
   position: relative;
   height: 2rem;
